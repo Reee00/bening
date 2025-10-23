@@ -400,7 +400,7 @@ body {
 }
 
 /* === RESPONSIVE NAVBAR (MOBILE) === */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -437,69 +437,5 @@ body {
 
   .dropdown-menu a {
     padding: 0.3rem 0;
-  }
-} */
-/* === RESPONSIVE NAVBAR (MOBILE) === */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    background: #fff;
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding: 1.5rem 0;
-    display: none;
-    max-height: 80vh;         /* Batasi tinggi */
-    overflow-y: auto;         /* Aktifkan scroll bila isi panjang */
-    z-index: 9999;
-    scroll-behavior: smooth;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 0.8rem 0;
-    position: relative;
-  }
-
-  /* Default: dropdown disembunyikan di mobile */
-  .dropdown-menu {
-    display: none;
-    flex-direction: column;
-    background: #fafafa;
-    box-shadow: none;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    text-align: left;
-  }
-
-  /* Saat dropdown aktif (klik menu tugas), baru tampil */
-  .dropdown-menu.show {
-    display: flex;
-  }
-
-  .dropdown-menu a {
-    padding: 0.4rem 0;
-    display: block;
-    color: #333;
-  }
-
-  /* Scrollbar halus */
-  .nav-links::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .nav-links::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
   }
 }
