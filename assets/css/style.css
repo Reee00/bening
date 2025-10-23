@@ -456,10 +456,10 @@ body {
     border-top: 1px solid #eee;
     padding: 1.5rem 0;
     display: none;
-    max-height: 80vh;         /* 🔹 Batasi tinggi maksimal agar tidak melebihi layar */
-    overflow-y: auto;         /* 🔹 Aktifkan scroll vertikal jika isi terlalu panjang */
-    z-index: 9999;            /* 🔹 Pastikan di atas elemen lain */
-    scroll-behavior: smooth;  /* 🔹 Scroll halus saat digulir */
+    max-height: 80vh;         /* Batasi tinggi */
+    overflow-y: auto;         /* Aktifkan scroll bila isi panjang */
+    z-index: 9999;
+    scroll-behavior: smooth;
   }
 
   .nav-links.show {
@@ -468,17 +468,23 @@ body {
 
   .nav-links li {
     margin: 0.8rem 0;
+    position: relative;
   }
 
-  /* Dropdown tetap bisa diklik dan terlihat penuh di mobile */
+  /* Default: dropdown disembunyikan di mobile */
   .dropdown-menu {
-    position: static;
-    background: none;
+    display: none;
+    flex-direction: column;
+    background: #fafafa;
     box-shadow: none;
-    opacity: 1;
-    transform: none;
-    padding-left: 1rem;
-    display: block;          /* 🔹 Pastikan dropdown muncul sepenuhnya */
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+
+  /* Saat dropdown aktif (klik menu tugas), baru tampil */
+  .dropdown-menu.show {
+    display: flex;
   }
 
   .dropdown-menu a {
@@ -487,7 +493,7 @@ body {
     color: #333;
   }
 
-  /* 🔹 Tambahan gaya scrollbar agar halus */
+  /* Scrollbar halus */
   .nav-links::-webkit-scrollbar {
     width: 6px;
   }
