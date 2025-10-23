@@ -400,7 +400,7 @@ body {
 }
 
 /* === RESPONSIVE NAVBAR (MOBILE) === */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -437,5 +437,63 @@ body {
 
   .dropdown-menu a {
     padding: 0.3rem 0;
+  }
+} */
+/* === RESPONSIVE NAVBAR (MOBILE) === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 1.5rem 0;
+    display: none;
+    max-height: 80vh;         /* 🔹 Batasi tinggi maksimal agar tidak melebihi layar */
+    overflow-y: auto;         /* 🔹 Aktifkan scroll vertikal jika isi terlalu panjang */
+    z-index: 9999;            /* 🔹 Pastikan di atas elemen lain */
+    scroll-behavior: smooth;  /* 🔹 Scroll halus saat digulir */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.8rem 0;
+  }
+
+  /* Dropdown tetap bisa diklik dan terlihat penuh di mobile */
+  .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+    padding-left: 1rem;
+    display: block;          /* 🔹 Pastikan dropdown muncul sepenuhnya */
+  }
+
+  .dropdown-menu a {
+    padding: 0.4rem 0;
+    display: block;
+    color: #333;
+  }
+
+  /* 🔹 Tambahan gaya scrollbar agar halus */
+  .nav-links::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .nav-links::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
   }
 }
