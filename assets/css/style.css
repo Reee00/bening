@@ -416,6 +416,8 @@ body {
     border-top: 1px solid #eee;
     padding: 1.5rem 0;
     display: none;
+    max-height: 80vh; /* TAMBAHAN: Batas tinggi maksimal */
+    overflow-y: auto; /* TAMBAHAN: Scroll jika konten panjang */
   }
 
   .nav-links.show {
@@ -433,9 +435,20 @@ body {
     opacity: 1;
     transform: none;
     padding-left: 1rem;
+    display: none; /* TAMBAHAN: Default hidden */
+    max-height: 0; /* TAMBAHAN: Mulai dari 0 */
+    overflow: hidden; /* TAMBAHAN: Hidden saat belum show */
+    transition: max-height 0.3s ease; /* TAMBAHAN: Animasi smooth */
+  }
+
+  .dropdown-menu.show {
+    display: block; /* TAMBAHAN: Tampilkan saat show */
+    max-height: 500px; /* TAMBAHAN: Tinggi cukup untuk 9 item */
+    overflow-y: auto; /* TAMBAHAN: Scroll jika lebih dari 500px */
   }
 
   .dropdown-menu a {
-    padding: 0.3rem 0;
+    padding: 0.5rem 0; /* Update: Sedikit lebih besar untuk tap area */
+    display: block; /* TAMBAHAN: Pastikan full width */
   }
 }
