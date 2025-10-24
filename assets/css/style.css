@@ -231,72 +231,132 @@ body {
 
 /* === GALLERY SECTION === */
 .gallery-section {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
   min-height: 100vh;
-  padding: 8rem 10% 5rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  max-width: 1100px;
 }
 
+/* H3 - Subtitle */
 .gallery-container h3 {
-  color: #e0a75e;
-  font-weight: 600;
+  color: #888 !important; /* Tambahkan !important untuk override */
+  font-size: 1rem !important;
+  font-weight: 500 !important;
   letter-spacing: 3px;
-  margin-bottom: 1rem;
   text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block; /* Pastikan muncul */
 }
 
+/* H1 - Title */
 .gallery-container h1 {
-  font-size: 2.2rem;
-  color: #222;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 4rem;
+  color: #333 !important; /* Warna gelap agar jelas */
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  display: block; /* Pastikan muncul */
 }
 
+/* Wrapper untuk slider */
 .slider {
-  width: 90%;
-  max-width: 1000px;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  position: relative;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .slides {
   display: flex;
-  width: calc(350px * 6);
+  gap: 1.5rem;
+  width: calc(400px * 5);
   animation: slide 20s infinite linear;
 }
 
 .slides img {
-  width: 350px;
-  height: 230px;
+  width: 400px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 16px;
-  margin-right: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slide {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(0); }
-  25%  { transform: translateX(-350px); }
-  40%  { transform: translateX(-350px); }
-  45%  { transform: translateX(-700px); }
-  60%  { transform: translateX(-700px); }
-  65%  { transform: translateX(-1050px); }
-  80%  { transform: translateX(-1050px); }
-  85%  { transform: translateX(-1400px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-400px * 5 - 1.5rem * 5));
+  }
 }
 
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .gallery-section {
+    padding: 3rem 1rem;
+  }
+
+  .gallery-container h3 {
+    font-size: 0.85rem !important;
+  }
+
+  .gallery-container h1 {
+    font-size: 1.6rem !important;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .slides {
+    width: calc(260px * 5);
+    gap: 1rem;
+    animation: slide 15s infinite linear;
+  }
+
+  .slides img {
+    width: 260px;
+    height: 180px;
+  }
+
+  @keyframes slide {
+    100% {
+      transform: translateX(calc(-260px * 5 - 1rem * 5));
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container h3 {
+    font-size: 0.75rem !important;
+  }
+
+  .gallery-container h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.5;
+        margin-bottom: 2rem;
+
+  }
+
+  .slides {
+    width: calc(200px * 5);
+    gap: 0.8rem;
+    animation: slide 12s infinite linear;
+  }
+
+  .slides img {
+    width: 200px;
+    height: 140px;
+  }
+
+  @keyframes slide {
+    100% {
+      transform: translateX(calc(-200px * 5 - 0.8rem * 5));
+    }
+  }
+}
 /* === CONTACT SECTION === */
 .contact-section {
   min-height: 100vh;
